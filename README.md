@@ -56,7 +56,14 @@ This will work on a Windows, Mac or Linux machine, just be sure to download the 
 
 ## Putting everything together
 This image illustrates how to connect the DHT11, MCP9700, and KY-038 to your Raspberry Pi Pico WH using a piece of bread.
+<p align='center'>
 <img src='' width=800>
+</p>
+
+The KY-038 Sound sensor has both analog and digital outputs. In this project we will utilize the **Digital ONLY**, It will give us a HIGH value (1), when the sound detected is high enough. On this module is a potentiometer where you can adjust the sensitivity of the sound input. This is pretty tricky, the microphone is rather sensitive and will detect magnetic fields, blowing wind etc. 
+<p align='center'>
+<img src='' width=800>
+</p>
 
 ## Platform
 For this project the choice of platform falls on **adafruit**. It is free and easy to use for beginners. It also offers some simple visuals for presenting your data.
@@ -66,5 +73,46 @@ For this project the choice of platform falls on **adafruit**. It is free and ea
  * Instructions on how to set up feeds can be found on adafruits [basic-feeds tutorial](https://learn.adafruit.com/adafruit-io-basics-feeds).
 
 ## The Code
-The acode is divided
-  
+The code is divided into a few different files.  
+
+* boot.py is the first script that runs when the Pico is powered up. It connects the machine to your wifi and sets up a connection to Adafruit.
+* main.py basically consist of an endless loop of sending sensor values to the mqtt broker. 
+* In the folder “lib/“ we got: 
+	* mqtt.py - a library that lets us use the MQTT-protocol to send data to the broker
+	* sensors.py - a library that connects ours sensors to the Raspberry Pi pico W and it holds functions to get the data from the sensors.
+	* secrets.py - our credentials in a dictionary 
+
+<p align='center'>
+<img src='' width=400>
+</p>
+
+## Transmitting data
+In this project we use WiFi and MQTT protocols to transmit data to adafruit. The data is transmitted every 3 seconds, this lets us get a "real-time" update within the scope of the free plan of Adafruit. 
+
+## Presenting data
+There we have it! 
+
+To visualize this data, we will [set up a dashboard](https://learn.adafruit.com/adafruit-io-basics-dashboards) at adafruit using the four feeds we created.
+
+The data that is stored in the database is:
+	* Temp x 2 and humidity (only the latest read)
+	* Sound is saved 4 hours.
+
+<p align='center'>
+<img src='img/dashboard' width=800>
+</p>
+
+## Final thoughts and design
+
+This is a beginners to intermediate project in IoT. The setup is really basic, but the sound sensor provides a bit extra challenge, and it really doesn’t live up to my expectations.
+
+To make it better,
+* We can use a Raspberry Pi or an Arduino,
+	So we can hook up a better (and calibrated) microphone. 
+	Then we could use the KY-038 as a “wake-up sensor” and the other microphone could send sound data (so we can rule out sound that isn’t made by 		the baby)
+* We could also change our way of sending data to Bluetooth, which would be more user friendly for this use case.
+* Adding a vibration sensor would be neat aswell.
+
+<p align='center'>
+<img src='img/dashboard' width=800>
+</p>
