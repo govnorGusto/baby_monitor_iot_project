@@ -18,8 +18,7 @@ To measure temperatures and humidity we will use DHT11 Humidity and Temperature 
 
 We also need a breadboard and some jumpers to connect everything, and a micro-USB cable to connect to our computer, this will also second as a power source.
 
-Table of components bought at electroki
-
+Table of components bought at [electro:kit](https://www.electrokit.com).
 |                                                                                                                               | Material             | Price (SEK) |
 | ----------------------------------------------------------------------------------------------------------------------------- | -------------------- | ----------- |
 | <img src='https://www.electrokit.com/uploads/productimage/41019/PICO-WH-HERO.jpg' width=150>  | Raspberry Pi Pico WH | 109         |
@@ -29,3 +28,28 @@ Table of components bought at electroki
 | <img src='https://www.electrokit.com/uploads/productimage/10160/10160840.jpg' width=150>      | Breadboard           | 69          |
 | <img src='https://www.electrokit.com/uploads/productimage/41012/41012909.jpg' width=150>      | Jumper cables M-to-M | 29          |
 | <img src='https://www.electrokit.com/uploads/productimage/41002/41002871-1.jpg' width=150>    | USB-cable A male – mini B male 5p   | 39          |
+
+## Computer setup
+This will work on a Windows, Mac or Linux machine, just be sure to download the right software for for your OS.
+
+* For IDE we use [Visual Studio Code](https://code.visualstudio.com/)
+  * with the extension [PyMakr](https://github.com/pycom/pymakr-vsc/blob/HEAD/GET_STARTED.md) (which is used to upload code to the Pico WH.
+  * To use the extension we also need to install [NodeJS](https://nodejs.org/en/download).
+
+### Installation steps
+
+1. Install [Python](https://www.python.org/downloads/) if you don't already have it installed.
+2. Download and install [Node JS](https://nodejs.org/en/download). Get the current version, not the LTS.
+3. Download and install the IDE [VS Code](https://code.visualstudio.com/).
+4. Install [PyMakr](https://github.com/pycom/pymakr-vsc/blob/HEAD/GET_STARTED.md) via the extension marketplace inside VS Code.
+5. Update the firmware on your Raspberry Pi Pico:
+   In order:
+   * Download The [MicroPython firmware](https://micropython.org/download/rp2-pico-w/). This is a **uf2** file. Get the latest from **Releases**, not ~~Nightly builds~~.
+   * Connect the micro-USB cable to the Raspberry Pi Pico.
+   * While holding the **BOOTSEL** button down on the board, connect the other end of the USB cable to your computer. After plugging it in you can release the button.
+   * A new drive should appear in your file system named **RPI-RP2**, this is the Raspberry Pi Pico storage. Just drag and drop the **uf2**, you downloaded earlier, into this storage. This will install micropython on your Raspberry Pi Pico.
+   * Wait for the board to automatically disconnect and reconnect (should take less than a minute).
+   * If you are using a Linux machine you need to do the following extra steps:
+      * **Debian/Fedora**: enter this command into the terminal ``sudo usermod -a -G dialout $USER ``
+      * **Arch**: enter the following command into the terminal
+        ``sudo usermod -a -G uucp $USER``
