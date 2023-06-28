@@ -57,12 +57,12 @@ This will work on a Windows, Mac or Linux machine, just be sure to download the 
 ## Putting everything together
 This image illustrates how to connect the DHT11, MCP9700, and KY-038 to your Raspberry Pi Pico WH using a piece of bread.
 <p align='center'>
-<img src='' width=800>
+<img src='https://github.com/gurkwaan/baby_monitor_iot_project/blob/main/img/breadboard.png?raw=true' width=800>
 </p>
 
 The KY-038 Sound sensor has both analog and digital outputs. In this project we will utilize the **Digital ONLY**, It will give us a HIGH value (1), when the sound detected is high enough. On this module is a potentiometer where you can adjust the sensitivity of the sound input. This is pretty tricky, the microphone is rather sensitive and will detect magnetic fields, blowing wind etc. 
 <p align='center'>
-<img src='' width=800>
+<img src='https://github.com/gurkwaan/baby_monitor_iot_project/blob/main/img/400px-sens-poti-EN.png' width=800>
 </p>
 
 ## Platform
@@ -83,7 +83,7 @@ The code is divided into a few different files.
 	* secrets.py - our credentials in a dictionary 
 
 <p align='center'>
-<img src='' width=400>
+<img src='https://github.com/gurkwaan/baby_monitor_iot_project/blob/main/img/filetree.png?raw=true' width=400>
 </p>
 
 ## Transmitting data
@@ -99,7 +99,7 @@ The data that is stored in the database is:
 	* Sound is saved 4 hours.
 
 <p align='center'>
-<img src='img/dashboard' width=800>
+<img src='https://github.com/gurkwaan/baby_monitor_iot_project/blob/main/img/dashboard.png' width=800>
 </p>
 
 ## Final thoughts and design
@@ -111,8 +111,8 @@ To make it better,
 	So we can hook up a better (and calibrated) microphone. 
 	Then we could use the KY-038 as a “wake-up sensor” and the other microphone could send sound data (so we can rule out sound that isn’t made by 		the baby)
 * We could also change our way of sending data to Bluetooth, which would be more user friendly for this use case.
-* Adding a vibration sensor would be neat aswell.
+* Adding a vibration sensor would be neat as well.
 
 <p align='center'>
-<img src='img/dashboard' width=800>
+<img src='https://github.com/gurkwaan/baby_monitor_iot_project/blob/main/img/final.jpg?raw=true' width=800>
 </p>
