@@ -53,3 +53,18 @@ This will work on a Windows, Mac or Linux machine, just be sure to download the 
       * **Debian/Fedora**: enter this command into the terminal ``sudo usermod -a -G dialout $USER ``
       * **Arch**: enter the following command into the terminal
         ``sudo usermod -a -G uucp $USER``
+
+## Putting everything together
+This image illustrates how to connect the DHT11, MCP9700, and KY-038 to your Raspberry Pi Pico WH using a piece of bread.
+<img src='' width=800>
+
+## Platform
+For this project the choice of platform falls on **adafruit**. It is free and easy to use for beginners. It also offers some simple visuals for presenting your data.
+
+ * First we need to set up an account at [adafruit IO](https://io.adafruit.com)
+ * Next we create 4 feeds, one for each sensor, exception is the DHT11, which requires two feeds, one for temperature and one for humidity.
+ * Instructions on how to set up feeds can be found on adafruits [basic-feeds tutorial](https://learn.adafruit.com/adafruit-io-basics-feeds).
+
+## The Code
+The acode is divided
+  
