@@ -3,7 +3,7 @@ Author: Gustav Hardselius<br>
 ID: gh222mp
 
 ## Overview
-This project is how you go about to make a simple "real-time" baby monitor. It measures 2 different temperatures, humidity and has sound detection (for the screams). It dsplays current values as well as monitoring if the sound i high over time. This is a beginners to intermediate project and the estimated time needed to complete this project following this tutorial is 3-4 hours.
+This project is how you go about to make a simple "real-time" baby monitor. It measures 2 different temperatures, humidity and has sound detection (for the screams). It displays current values as well as monitoring if the sound i high over time. This is a beginners to intermediate project and the estimated time needed to complete this project following this tutorial is 3-4 hours.
 
 ## Objective
 The purpose of this project is to be able to monitor your baby when its sleeping in a stroller. This will be done by using two different temperature sensor (outside temp and the temp close to the baby), humidity and sound detection in real-time, (this also monitors if a high sound is detected over time, so we could rule out a sudden sound).
