@@ -80,7 +80,8 @@ The code is divided into a few different files.
 * In the folder “lib/“ we got: 
 	* mqtt.py - a library that lets us use the MQTT-protocol to send data to the broker
 	* sensors.py - a library that connects ours sensors to the Raspberry Pi pico W and it holds functions to get the data from the sensors.
-	* secrets.py - our credentials in a dictionary 
+	* secrets.py - our credentials in a dictionary
+   The code in full is this [Repository](https://github.com/gurkwaan/baby_monitor_iot_project/tree/main/iot-baby-monitor-project)
 
 <p align='center'>
 <img src='https://github.com/gurkwaan/baby_monitor_iot_project/blob/main/img/filetree.png?raw=true' width=400>
